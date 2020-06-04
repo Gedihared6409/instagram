@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% block content %}
+{{block.super}}
+<div class="container">
+  <div class="row">
+    <div class="col- mx-auto p-5 mt-2" style="background-color:#ffffff; border: 1px solid #e6e6e6;">
+  
+          <p style=" font-size:25px; text-align: center"><strong>My Profile Picture</strong></p>
+      
+        <img src="{{image.url}}" alt="" style=" border-radius:50%; height: 400px; width: 400px">
+      
+        <button class="btn btn-primary ml-3" ><a href="{% url 'post' %}" style=" color:#ffffff;">New Post</a></button>
+        </p>
+        <hr>
+        <button class="btn btn-primary ml-3" ><a href="{% url 'upload_profile' %}" style=" color:#ffffff;">Change Profile</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
