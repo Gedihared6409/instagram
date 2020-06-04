@@ -62,5 +62,17 @@ $ python3.6 manage.py test
 A number of user story functionalities are not yet enabled
 
 
+## Technologies Used
+- Python3.6
+- Django
+- Bootstrap
+- Postgres Database
+- CSS
+- HTML
+- Heroku
+
+### License
+
+MIT (c) 2020 **ali hared**
 
 
