@@ -19,6 +19,7 @@ from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('images.urls')),
 
 ]
 
