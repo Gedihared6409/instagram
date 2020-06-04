@@ -47,4 +47,15 @@ As a user I would like:
 
 ```
 
+### Running the application
+```
+$ python3.6 manage.py runserver
+```
+
+### Running the tests
+```
+$ python3.6 manage.py test
+```
+
+
 
