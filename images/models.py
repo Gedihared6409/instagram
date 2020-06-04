@@ -30,3 +30,38 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Image(models.Model):
+    image = models.ImageField(upload_to = 'photos/', null = True)
+    name = models.CharField(max_length = 100, blank = True, null = True)
+    caption = models.TextField(blank = True, null = True)
+    likes = models.PositiveIntegerField(default = 0, null = True)
+    date_posted = models.DateTimeField(auto_now_add = True, null = True)
+    user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
+
+    def save_image(self):
+        self.save()
+    
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def get_images(cls):
+        images = cls.objects.order_by('date_posted')
+        return images
+    
+    @classmethod
+    def get_image(cls, id):
+        image = cls.objects.get(id = id)
+        return image
+    
+    def __str__(self):
+        return self.name
+
+    # @classmethod
+    # def search_by_name(cls,search_term):
+    #     photos = cls.objects.filter(name__icontains=search_term)
+    #     return photos
+
+
