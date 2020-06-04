@@ -65,3 +65,26 @@ class Image(models.Model):
     #     return photos
 
 
+class Comment(models.Model):
+    comment = models.CharField(max_length = 150, blank = True, null = True)
+    date_commented = models.DateTimeField(auto_now_add = True, null = True)
+    user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
+    image = models.ForeignKey(Image, null = True)
+
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
+    
+    def __str__(self):
+        return self.comment
+
+
+class Like(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True, null = True)
+    user = models.ForeignKey(User, related_name='liker', null = True)    
+    image = models.ForeignKey(Image, related_name='liked_post', null = True)
+
+    def __str__(self):
+        return '{} : {}'.format(self.user, self.image)
