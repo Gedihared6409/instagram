@@ -19,4 +19,10 @@ class ImageTestClass(TestCase):
         self.image.delete_image()
         images = Image.objects.all()
 
+    def test_update_caption(self):
+        self.new_image.save_image()
+        self.new_image = Image.objects.get(pk = 1)
+        self.new_image.update_caption('changed Image caption')
+        self.updated_image = Image.objects.get(id = 1)
+        self.assertEqual(self.updated_image.image_caption,"changed Image caption")
 
