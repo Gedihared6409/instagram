@@ -6,3 +6,10 @@ from .models import Profile, Image, Comment, Like
 from .forms import PostForm, ProfileUploadForm
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
+def index(request):
+    images = Image.objects.all()
+    print(images)
+    return render(request, 'index.html', {"images":images})
+
+
