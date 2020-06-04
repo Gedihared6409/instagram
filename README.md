@@ -57,5 +57,10 @@ $ python3.6 manage.py runserver
 $ python3.6 manage.py test
 ```
 
+## Known Bugs
+
+A number of user story functionalities are not yet enabled
+
+
 
 
