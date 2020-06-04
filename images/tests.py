@@ -44,3 +44,10 @@ class ProfileTestClass(TestCase):
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles) == 0)
 
+    def test_update_bio(self):
+        self.new_profile.save_profile()
+        self.new_profile = Profile.objects.get(id=1)
+        profile = self.new_profile
+        profile.update_bio('changed user bio')
+        self.updated_profile = Profile.objects.get(id=1)
+        self.assertEqual(self.updated_profile.bio,'changed user bio')
