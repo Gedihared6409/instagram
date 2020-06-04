@@ -26,3 +26,15 @@ class ImageTestClass(TestCase):
         self.updated_image = Image.objects.get(id = 1)
         self.assertEqual(self.updated_image.image_caption,"changed Image caption")
 
+class ProfileTestClass(TestCase):
+    def setUp(self):
+        self.new_user = User.objects.create_user(username='user',password='user-password')
+        self.new_profile = Profile(id=1,user=self.new_user,profile_pic='photos/photo',bio='user bio')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_profile,Profile))
+
+    def test_save_profile(self):
+        self.new_profile.save_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles) > 0)
