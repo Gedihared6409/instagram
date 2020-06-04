@@ -29,3 +29,12 @@ As a user I would like:
 | Upload a post | **Click**  post | Direct the user to a page with a form where the user can create and submit a post |
 | See other users | **Click** friends | Direct the user to a page where they see a list of other users |
 | Comment on post | **Click** comment link | Direct user to a page with a form for writing a comment |
+
+## Setup/Installation Requirements
+
+### Prerequisites
+* Python 3.6.7
+* Virtual environment
+* Postgres Database
+
+ 
