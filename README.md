@@ -37,4 +37,14 @@ As a user I would like:
 * Virtual environment
 * Postgres Database
 
- 
+
+### Installation Process
+```
+* $ git clone 
+* $ cd  Instagram-App
+* $ python3.6 -m venv virtual
+* $ source virtual/bin/activate
+
+```
+
+
