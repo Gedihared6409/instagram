@@ -1,0 +1,39 @@
+    {% extends 'base.html' %} 
+    {% load bootstrap4 %} 
+    {% block content %}
+    
+    <div class="container">
+        <div class="container search-section">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 search-form">
+                <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results' %}">
+                        <input class="form-control mr-sm-2" type="search" placeholder = "Search Profile" name = "image" aria-label = "Search">
+                       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search fa-lg"></i></button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>                
+        </div>
+      </div>
+      <br>
+      <br>
+      
+    
+      <div class="row">
+        <div class="col- mx-auto p-5" style="background-color:#ffffff; border: 1px solid #e6e6e6;">
+          <div class="profile p-4" style="white-space:nowrap">
+            <img src="{{img.image.url}}" alt="" class="img-fluid" style="border-radius:50%; display:inline;">
+            <p class="ml-2" style="display:inline; white-space:nowrap; font-size:25px;">Hey<strong> {{current_user}}</strong>. Welcome to Instagram App</p>
+            <button class="btn btn-primary ml-2"><a href="{% url 'post' %}" style="display:inline;color:#ffffff;">Post Image</a></button>
+            <hr>
+          </div>
+        </div><br>
+    </div>
+    <div class="row"></div>
+      <div class="col-sm">
+          {%for imagesv in images%}
+   <img src="{{imagesv.image.url}}" alt=""style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px; border-radius:30%" class="img-thumbnail">
+   {%endfor%}
+   </div>
+   </div>
+    {% endblock %}
